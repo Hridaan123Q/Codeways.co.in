@@ -334,6 +334,17 @@ function processOrder(btn) {
     })
     .then(response => response.json())
     .then(data => {
+        if (data.success === "false") {
+            // FormSubmit returned an error (e.g. form not activated)
+            showToast(data.message || "Failed to submit order. Please activate the form in your email.", "error");
+            btn.innerText = ogText;
+            btn.style.background = "";
+            btn.style.color = "";
+            btn.disabled = false;
+            btn.style.opacity = "1";
+            return;
+        }
+
         btn.innerText = "Order Submitted!";
         btn.style.background = "var(--neon-green)";
         btn.style.opacity = "1";
