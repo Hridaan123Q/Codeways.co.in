@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeways | Book Servers, Apps & Websites</title>
+    <meta name="description" content="Get premium Websites, Apps, Discord Bots, and Minecraft Servers built to your custom needs. Starting business from Navratri to Diwali!">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <!-- User's logo will be placed here -->
+            <img src="logo.png" alt="Codeways Logo" id="logo" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <h1 id="logo-text" style="display:none;">Codeways<span class="dot">.</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact" class="btn-primary" onclick="copyDiscord(this, event)"><i class="fa-brands fa-discord"></i> Join Discord</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glow-text">Bring Your Ideas to Life</h1>
+            <p>Premium Websites, Apps, Discord Bots, and Minecraft Servers crafted for you.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Explore Packages</a>
+                <a href="#contact" class="btn-secondary">Book Now</a>
+            </div>
+        </div>
+        <!-- Hero Video -->
+        <div class="hero-media">
+            <video src="Website_video.mp4" autoplay loop muted playsinline></video>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our <span class="gradient-text">Services</span></h2>
+            <p>Everything you need to launch and scale your online presence.</p>
+        </div>
+
+        <div class="cards-container">
+            <!-- Websites -->
+            <div class="card">
+                <div class="card-icon websites-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3>Websites</h3>
+                <p>Custom websites tailored to your brand. From landing pages to full e-commerce solutions.</p>
+                <div class="price-tag">
+                    <span class="price">₹800 - ₹1000+</span>
+                    <span class="detail">as per customization</span>
+                </div>
+                <a href="#" class="btn-card" onclick="openModal(event, 'website')">Order Website</a>
+            </div>
+
+            <!-- Apps -->
+            <div class="card">
+                <div class="card-icon apps-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>Mobile Apps</h3>
+                <p>High-performance mobile applications for Android and iOS devices.</p>
+                <div class="price-tag">
+                    <span class="price">₹2000 - ₹2200+</span>
+                    <span class="detail">as per customization</span>
+                </div>
+                <a href="#" class="btn-card" onclick="openModal(event, 'app')">Order App</a>
+            </div>
+
+            <!-- Discord Bots -->
+            <div class="card">
+                <div class="card-icon bots-icon">
+                    <i class="fa-brands fa-discord"></i>
+                </div>
+                <h3>Discord Bots</h3>
+                <p>Automate your server with custom bots for moderation, economy, and fun.</p>
+                <div class="price-tag">
+                    <span class="price">₹800 - ₹1000+</span>
+                    <span class="detail">as per customization</span>
+                </div>
+                <a href="#" class="btn-card" onclick="openModal(event, 'bot')">Order Bot</a>
+            </div>
+
+            <!-- Minecraft Servers -->
+            <div class="card">
+                <div class="card-icon servers-icon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3>Minecraft Servers</h3>
+                <p>Reliable, lag-free servers with custom plugin setups and full support.</p>
+                <div class="price-tag">
+                    <span class="price">₹800 - ₹1000+</span>
+                    <span class="detail">as per customization</span>
+                </div>
+                <a href="#" class="btn-card" onclick="openModal(event, 'server')">Order Server</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Ready to <span class="gradient-text">Start?</span></h2>
+            <p>Reach out to us to book your package. We will get back to you immediately!</p>
+            <div class="contact-links">
+                <a href="https://instagram.com/Codeways.co.in" target="_blank" class="social-link instagram">
+                    <i class="fa-brands fa-instagram"></i> @Codeways.co.in
+                </a>
+                <a href="#" class="social-link discord" onclick="copyDiscord(this, event)">
+                    <i class="fa-brands fa-discord"></i> <span>Discord: Hridaan123q7400</span>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Hridaan.codes@gmail.com" target="_blank" class="social-link email">
+                    <i class="fa-solid fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generic Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Order <span class="gradient-text">Service</span></h2>
+
+            <div id="dynamic-form-content">
+                <!-- Content will be injected by JS -->
+            </div>
+
+            <!-- Contact Information for Order -->
+            <div class="form-group" style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                <label>Your Name</label>
+                <input type="text" id="customer-name" placeholder="e.g. John Doe" required>
+            </div>
+            <div class="form-group">
+                <label>Your Email ID</label>
+                <input type="email" id="customer-email" placeholder="e.g. john@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label>Preferred Contact Method</label>
+                <select id="contact-method">
+                    <option value="discord">Discord</option>
+                    <option value="email">Email</option>
+                </select>
+            </div>
+            <div class="form-group" id="discord-handle-group">
+                <label>Your Discord Handle</label>
+                <input type="text" id="customer-discord" placeholder="e.g. username#1234">
+            </div>
+
+            <button class="btn-primary" id="submit-btn" style="width: 100%; margin-top: 1rem;" onclick="processOrder(this)">Submit Order</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <footer>
+        <p>&copy; 2026 Codeways. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
